@@ -2190,18 +2190,6 @@ bool CWallet::MintableCoins()
         }
     }
 
-    // zSPD
-    if (nZspdBalance > 0) {
-        set<CMintMeta> setMints = zspdTracker->ListMints(true, true, true);
-        for (auto mint : setMints) {
-            if (mint.nVersion < CZerocoinMint::STAKABLE_VERSION)
-                continue;
-            if (mint.nHeight > chainActive.Height() - Params().Zerocoin_RequiredStakeDepth())
-                continue;
-           return true;
-        }
-    }
-
     return false;
 }
 
@@ -3711,9 +3699,11 @@ set<CTxDestination> CWallet::GetAccountAddresses(string strAccount) const
 
 bool CReserveKey::GetReservedKey(CPubKey& pubkey)
 {
+    LogPrintf("GetReservedKey nindex = %d\n", nIndex);
     if (nIndex == -1) {
         CKeyPool keypool;
         pwallet->ReserveKeyFromKeyPool(nIndex, keypool);
+        LogPrintf("GetReservedKey nindex = %d\n", nIndex);
         if (nIndex != -1)
             vchPubKey = keypool.vchPubKey;
         else {
@@ -3722,6 +3712,7 @@ bool CReserveKey::GetReservedKey(CPubKey& pubkey)
     }
     assert(vchPubKey.IsValid());
     pubkey = vchPubKey;
+    LogPrintf("Return GetReservedKey \n")
     return true;
 }
 

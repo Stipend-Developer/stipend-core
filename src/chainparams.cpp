@@ -112,16 +112,16 @@ public:
         pchMessageStart[3] = 0x9c;
         vAlertPubKey = ParseHex("0000098d3bacdeas7423fa5cbd6a89e0a9a5348f88d332b44a5cb1a8b7ed2c1eaa335fc8dc4f012cb8241cc0bdafd6ca70c5f5448916e4e6f511bcd746ed57dc50");
         nDefaultPort = 46978;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // Stipend starting difficulty is 1 / 2^12
+        bnProofOfWorkLimit = ~uint256(0) >> 9; // Stipend starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 8100; // 75%
         nRejectBlockOutdatedMajority = 10260; // 95%
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Stipend: 1 day
+        nTargetTimespan = 45 * 60; // Stipend: 1 day
         nTargetSpacing = 1 * 90;  // Stipend: 1.5 minutes
-        nMaturity = 100;
+        nMaturity = 10;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
@@ -177,8 +177,8 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
-        fAllowMinDifficultyBlocks = false;
+        fMiningRequiresPeers = false;
+        fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
@@ -361,7 +361,7 @@ public:
 
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = true;
-        fAllowMinDifficultyBlocks = false;
+        fAllowMinDifficultyBlocks = true;
         fMineBlocksOnDemand = true;
     }
 
