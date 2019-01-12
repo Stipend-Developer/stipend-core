@@ -541,19 +541,6 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-masternodeaddr=<n>", strprintf(_("Set external address:port to get to this masternode (example: %s)"), "128.127.106.235:51472"));
     strUsage += HelpMessageOpt("-budgetvotemode=<mode>", _("Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)"));
 
-    strUsage += HelpMessageGroup(_("Zerocoin options:"));
-#ifdef ENABLE_WALLET
-    strUsage += HelpMessageOpt("-enablezeromint=<n>", strprintf(_("Enable automatic Zerocoin minting (0-1, default: %u)"), 1));
-    strUsage += HelpMessageOpt("-zeromintpercentage=<n>", strprintf(_("Percentage of automatically minted Zerocoin  (1-100, default: %u)"), 10));
-    strUsage += HelpMessageOpt("-preferredDenom=<n>", strprintf(_("Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)"), 0));
-    strUsage += HelpMessageOpt("-backupzspd=<n>", strprintf(_("Enable automatic wallet backups triggered after each zSPD minting (0-1, default: %u)"), 1));
-    strUsage += HelpMessageOpt("-zspdbackuppath=<dir|file>", _("Specify custom backup path to add a copy of any automatic zSPD backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen"));
-#endif // ENABLE_WALLET
-    strUsage += HelpMessageOpt("-reindexzerocoin=<n>", strprintf(_("Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)"), 0));
-
-//    strUsage += "  -anonymizestipendamount=<n>     " + strprintf(_("Keep N SPD anonymized (default: %u)"), 0) + "\n";
-//    strUsage += "  -liquidityprovider=<n>       " + strprintf(_("Provide liquidity to Obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)"), 0) + "\n";
-
     strUsage += HelpMessageGroup(_("SwiftX options:"));
     strUsage += HelpMessageOpt("-enableswifttx=<n>", strprintf(_("Enable SwiftX, show confirmations for locked transactions (bool, default: %s)"), "true"));
     strUsage += HelpMessageOpt("-swifttxdepth=<n>", strprintf(_("Show N confirmations for a successfully locked transaction (0-9999, default: %u)"), nSwiftTXDepth));
@@ -1689,10 +1676,7 @@ bool AppInit2()
         fVerifyingBlocks = false;
 
         //Inititalize zSPDWallet
-        uiInterface.InitMessage(_("Syncing zSPD wallet..."));
-
-        bool fEnableZSpdBackups = GetBoolArg("-backupzspd", true);
-        pwalletMain->setZSpdAutoBackups(fEnableZSpdBackups);
+        uiInterface.InitMessage(_("Syncing SPD wallet..."));
 
         //Load zerocoin mint hashes to memory
         pwalletMain->zspdTracker->Init();
@@ -1831,32 +1815,11 @@ bool AppInit2()
         }
     }
 
-    fEnableZeromint = GetBoolArg("-enablezeromint", true);
+    fEnableZeromint = false;
 
-    nZeromintPercentage = GetArg("-zeromintpercentage", 10);
-    if (nZeromintPercentage > 100) nZeromintPercentage = 100;
-    if (nZeromintPercentage < 1) nZeromintPercentage = 1;
-
-    nPreferredDenom  = GetArg("-preferredDenom", 0);
-    if (nPreferredDenom != 0 && nPreferredDenom != 1 && nPreferredDenom != 5 && nPreferredDenom != 10 && nPreferredDenom != 50 &&
-        nPreferredDenom != 100 && nPreferredDenom != 500 && nPreferredDenom != 1000 && nPreferredDenom != 5000){
-        LogPrintf("-preferredDenom: invalid denomination parameter %d. Default value used\n", nPreferredDenom);
-        nPreferredDenom = 0;
-    }
 
 // XX42 Remove/refactor code below. Until then provide safe defaults
     nAnonymizeStipendAmount = 2;
-
-//    nLiquidityProvider = GetArg("-liquidityprovider", 0); //0-100
-//    if (nLiquidityProvider != 0) {
-//        obfuScationPool.SetMinBlockSpacing(std::min(nLiquidityProvider, 100) * 15);
-//        fEnableZeromint = true;
-//        nZeromintPercentage = 99999;
-//    }
-//
-//    nAnonymizeStipendAmount = GetArg("-anonymizestipendamount", 0);
-//    if (nAnonymizeStipendAmount > 999999) nAnonymizeStipendAmount = 999999;
-//    if (nAnonymizeStipendAmount < 2) nAnonymizeStipendAmount = 2;
 
     fEnableSwiftTX = GetBoolArg("-enableswifttx", fEnableSwiftTX);
     nSwiftTXDepth = GetArg("-swifttxdepth", nSwiftTXDepth);

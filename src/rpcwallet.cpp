@@ -2761,7 +2761,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
 
     int64_t nTime = GetTimeMillis();
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zSPD is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "Zerocoin transactions are not supported by Stipend.");
 
     EnsureWalletIsUnlocked(true);
 
@@ -2869,7 +2869,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zSPD is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "Zerocoin transactions are not supported by Stipend.");
 
     EnsureWalletIsUnlocked();
 
@@ -2927,7 +2927,7 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zSPD is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "Zerocoin transactions are not supported by Stipend.");
 
     std::string address_str = "";
     if (params.size() > 1) {
