@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a gitian build of PIVX using a Debian VM or physical system.*
+*Setup instructions for a gitian build of Stipend using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the PIVX
+Gitian is the deterministic build process that is used to build the Stipend
 Core executables. It provides a way to be reasonably sure that the
 executables are really built from source on GitHub. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to pivx-crypto.com.
+to stipend-crypto.com.
 
 More independent gitian builders are needed, which is why I wrote this
 guide. It is preferred to follow these steps yourself instead of using someone else's
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing gitian](#installing-gitian)
 - [Setting up gitian images](#setting-up-gitian-images)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building PIVX](#building-pivx)
+- [Building Stipend](#building-stipend)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -60,18 +60,18 @@ In the VirtualBox GUI click "Create" and choose the following parameters in the 
 ![](gitian-building/create_vm_hard_drive.png)
 
 - Hard Drive: Create a virtual hard drive now
-    
+
 ![](gitian-building/create_vm_hard_drive_file_type.png)
 
-- Hard Drive file type: Use the default, VDI (VirtualBox Disk Image) 
+- Hard Drive file type: Use the default, VDI (VirtualBox Disk Image)
 
 ![](gitian-building/create_vm_storage_physical_hard_drive.png)
-    
-- Storage on Physical hard drive: Dynamically Allocated 
-    
+
+- Storage on Physical hard drive: Dynamically Allocated
+
 ![](gitian-building/create_vm_file_location_size.png)
 
-- Disk size: at least 40GB; as low as 20GB *may* be possible, but better to err on the safe side 
+- Disk size: at least 40GB; as low as 20GB *may* be possible, but better to err on the safe side
 - Push the `Create` button
 
 Get the [Debian 7.8 net installer](http://cdimage.debian.org/cdimage/archive/7.8.0/amd64/iso-cd/debian-7.8.0-amd64-netinst.iso) (a more recent minor version should also work, see also [Debian Network installation](https://www.debian.org/CD/netinst/)).
@@ -81,7 +81,7 @@ Unixy OSes by entering the following in a terminal:
     echo "b712a141bc60269db217d3b3e456179bd6b181645f90e4aac9c42ed63de492e9  debian-7.4.0-amd64-netinst.iso" | sha256sum -c
     # (must return OK)
 
-After creating the VM, we need to configure it. 
+After creating the VM, we need to configure it.
 
 - Click the `Settings` button, then go to the `Network` tab. Adapter 1 should be attacked to `NAT`.
 
@@ -125,22 +125,22 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 ![](gitian-building/debian_install_4_configure_keyboard.png)
 
 - The VM will detect network settings using DHCP, this should all proceed automatically
-- Configure the network: 
+- Configure the network:
   - System name `debian`.
   - Leave domain name empty.
 
 ![](gitian-building/debian_install_5_configure_the_network.png)
 
-- Choose a root password and enter it twice (remember it for later) 
+- Choose a root password and enter it twice (remember it for later)
 
 ![](gitian-building/debian_install_6a_set_up_root_password.png)
 
-- Name the new user `debian` (the full name doesn't matter, you can leave it empty) 
+- Name the new user `debian` (the full name doesn't matter, you can leave it empty)
 
 ![](gitian-building/debian_install_7_set_up_user_fullname.png)
 ![](gitian-building/debian_install_8_set_up_username.png)
 
-- Choose a user password and enter it twice (remember it for later) 
+- Choose a user password and enter it twice (remember it for later)
 
 ![](gitian-building/debian_install_9_user_password.png)
 
@@ -150,25 +150,25 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 ![](gitian-building/debian_install_10_configure_clock.png)
 
 - Disk setup
-  - Partitioning method: Guided - Use the entire disk 
-  
+  - Partitioning method: Guided - Use the entire disk
+
 ![](gitian-building/debian_install_11_partition_disks.png)
 
-  - Select disk to partition: SCSI1 (0,0,0) 
+  - Select disk to partition: SCSI1 (0,0,0)
 
 ![](gitian-building/debian_install_12_choose_disk.png)
 
-  - Partitioning scheme: All files in one partition 
-  
+  - Partitioning scheme: All files in one partition
+
 ![](gitian-building/debian_install_13_partition_scheme.png)
 
   - Finish partitioning and write changes to disk -> *Yes* (`Tab`, `Enter` to select the `Yes` button)
 
-![](gitian-building/debian_install_14_finish.png) 
+![](gitian-building/debian_install_14_finish.png)
 ![](gitian-building/debian_install_15_write_changes.png)
 
 - The base system will be installed, this will take a minute or so
-- Choose a mirror (any will do) 
+- Choose a mirror (any will do)
 
 ![](gitian-building/debian_install_16_choose_a_mirror.png)
 
@@ -178,7 +178,7 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 
 - Wait a bit while 'Select and install software' runs
 - Participate in popularity contest -> *No*
-- Choose software to install. We need just the base system. 
+- Choose software to install. We need just the base system.
 
 ![](gitian-building/debian_install_19_software_selection.png)
 
@@ -187,7 +187,7 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 
 ![](gitian-building/debian_install_20_install_grub.png)
 
-- Install the GRUB boot loader to the master boot record? -> Yes 
+- Install the GRUB boot loader to the master boot record? -> Yes
 
 ![](gitian-building/debian_install_21_finish_installation.png)
 
@@ -277,12 +277,12 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user *debian* not for *root*.
 
-Clone the git repositories for pivx and gitian and then checkout the pivx version that you want to build.
+Clone the git repositories for stipend and gitian and then checkout the stipend version that you want to build.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/pivx-crypto/pivx.git
-cd pivx
+git clone https://github.com/stipend-crypto/stipend.git
+cd stipend
 git checkout v${VERSION}
 cd ..
 ```
@@ -321,16 +321,16 @@ There will be a lot of warnings printed during build of the images. These can be
 Getting and building the inputs
 --------------------------------
 
-Follow the instructions in [doc/release-process.md](release-process.md) in the pivx repository
+Follow the instructions in [doc/release-process.md](release-process.md) in the stipend repository
 under 'Fetch and build inputs' to install sources which require manual intervention. Also follow
 the next step: 'Seed the Gitian sources cache', which will fetch all necessary source files allowing
 for gitian to work offline.
 
-Building PIVX
+Building Stipend
 ----------------
 
-To build PIVX (for Linux, OSX and Windows) just follow the steps under 'perform
-gitian builds' in [doc/release-process.md](release-process.md) in the pivx repository.
+To build Stipend (for Linux, OSX and Windows) just follow the steps under 'perform
+gitian builds' in [doc/release-process.md](release-process.md) in the stipend repository.
 
 This may take a long time as it also builds the dependencies needed for each descriptor.
 These dependencies will be cached after a successful build to avoid rebuilding them when possible.
@@ -345,12 +345,12 @@ tail -f var/build.log
 Output from `gbuild` will look something like
 
 ```bash
-    Initialized empty Git repository in /home/debian/gitian-builder/inputs/pivx/.git/
+    Initialized empty Git repository in /home/debian/gitian-builder/inputs/stipend/.git/
     remote: Reusing existing pack: 35606, done.
     remote: Total 35606 (delta 0), reused 0 (delta 0)
     Receiving objects: 100% (35606/35606), 26.52 MiB | 4.28 MiB/s, done.
     Resolving deltas: 100% (25724/25724), done.
-    From https://github.com/pivx-crypto/pivx
+    From https://github.com/stipend-crypto/stipend
     ... (new tags, new branch etc)
     --- Building for precise x86_64 ---
     Stopping target if it is up
@@ -377,11 +377,11 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/crowning-/pivx.git
+URL=https://github.com/crowning-/stipend.git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
-./bin/gbuild --commit pivx=${COMMIT} --url pivx=${URL} ../pivx/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit pivx=${COMMIT} --url pivx=${URL} ../pivx/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit pivx=${COMMIT} --url pivx=${URL} ../pivx/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit stipend=${COMMIT} --url stipend=${URL} ../stipend/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit stipend=${COMMIT} --url stipend=${URL} ../stipend/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit stipend=${COMMIT} --url stipend=${URL} ../stipend/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Signing externally
@@ -396,9 +396,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/pivx-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/pivx-build.assert
-    gpg --detach-sign ${VERSION}-osx/${SIGNER}/pivx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/stipend-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/stipend-build.assert
+    gpg --detach-sign ${VERSION}-osx/${SIGNER}/stipend-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -408,6 +408,6 @@ Uploading signatures (not yet implemented)
 ---------------------
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
-[pivx/gitian.sigs](https://github.com/pivx-crypto/gitian.sigs/) repository, or if that's not possible to create a pull
+[stipend/gitian.sigs](https://github.com/stipend-crypto/gitian.sigs/) repository, or if that's not possible to create a pull
 request.
 There will be an official announcement when this repository is online.

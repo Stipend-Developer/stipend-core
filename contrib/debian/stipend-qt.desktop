@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Stipend
+Comment=Stipend P2P Cryptocurrency
+Comment[fr]=Stipend, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Stipend, eşten eşe kriptografik sanal para birimi
+Exec=stipend-qt %u
+Terminal=false
+Type=Application
+Icon=stipend128
+MimeType=x-scheme-handler/stipend;
+Categories=Office;Finance;

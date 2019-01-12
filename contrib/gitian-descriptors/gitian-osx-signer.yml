@@ -1,5 +1,5 @@
 ---
-name: "pivx-dmg-signer"
+name: "stipend-dmg-signer"
 suites:
 - "bionic"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/pivx-project/pivx-detached-sigs.git"
+- "url": "https://github.com/Stipend-Developer/stipend-detached-sigs.git"
   "dir": "signature"
 files:
-- "pivx-osx-unsigned.tar.gz"
+- "stipend-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -27,8 +27,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=pivx-osx-unsigned.tar.gz
-  SIGNED=pivx-osx-signed.dmg
+  UNSIGNED=stipend-osx-unsigned.tar.gz
+  SIGNED=stipend-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"
