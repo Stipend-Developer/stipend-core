@@ -238,10 +238,10 @@ QT_TRANSLATE_NOOP("stipend-core", ""
 QT_TRANSLATE_NOOP("stipend-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("stipend-core", "(51472 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("stipend-core", "(46978 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("stipend-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("stipend-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("stipend-core", "(must be 51472 for mainnet)"),
+QT_TRANSLATE_NOOP("stipend-core", "(must be 46978 for mainnet)"),
 QT_TRANSLATE_NOOP("stipend-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("stipend-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("stipend-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
