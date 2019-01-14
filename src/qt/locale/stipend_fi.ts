@@ -573,7 +573,7 @@
         <translation>Lähetä kolikkoja Stipend osoitteeseen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Pyydä maksuja (Generoi QR koodeja ja stipend: URIja)</translation>
     </message>
     <message>
@@ -1710,7 +1710,7 @@ Please check the address and try again.</source>
         <translation>&amp;Määrä:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Pyydä maksua</translation>
     </message>
     <message>
@@ -1773,7 +1773,7 @@ Please check the address and try again.</source>
         <translation>&amp;Tallenna Kuva...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Pyydä maksu %1</translation>
     </message>
     <message>

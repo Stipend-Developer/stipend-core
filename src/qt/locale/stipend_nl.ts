@@ -653,7 +653,7 @@
         <translation>Verstuur munten naar een Stipend adres</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Vraag betaling aan (genereert QR codes en Stipend: URI's)</translation>
     </message>
     <message>
@@ -3540,7 +3540,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>&amp;Hoeveelheid:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Verzoek betaling</translation>
     </message>
     <message>
@@ -3603,7 +3603,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>&amp;Afbeelding opslaan...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Verzoek betaling aan %1</translation>
     </message>
     <message>

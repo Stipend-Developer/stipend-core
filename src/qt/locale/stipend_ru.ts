@@ -653,7 +653,7 @@
         <translation>Отправить монеты на Stipend адрес</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Запросить платежи (генерирует QR-код и Stipend: URI)</translation>
     </message>
     <message>
@@ -3539,7 +3539,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>&amp;Количество:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Запрос платежа</translation>
     </message>
     <message>
@@ -3602,7 +3602,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>&amp;Сохранить изображение</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Запрос платежа в %1</translation>
     </message>
     <message>

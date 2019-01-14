@@ -609,7 +609,7 @@
         <translation>Pošaljite kovanice na Stipend adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Zahtjev za plaćanja (generira QR kodove i stipend: URI)</translation>
     </message>
     <message>

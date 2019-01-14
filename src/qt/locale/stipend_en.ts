@@ -841,7 +841,7 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4623,8 +4623,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+62"/>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Request payment</translation>
+        <source>&amp;Request Payment</source>
+        <translation>&amp;Request Payment</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4711,8 +4711,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location filename="../receiverequestdialog.cpp" line="+63"/>
-        <source>Request payment to %1</source>
-        <translation>Request payment to %1</translation>
+        <source>Request Payment to %1</source>
+        <translation>Request Payment to %1</translation>
     </message>
     <message>
         <location line="+6"/>

@@ -621,7 +621,7 @@
         <translation>Enviar moedas para um endereço Stipend</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Requisitar pagamentos (gera códigos QR e stipend: URIs)</translation>
     </message>
     <message>
@@ -2494,7 +2494,7 @@ https://www.transifex.com/stipend-project/stipend-project-translations</translat
         <translation>&amp;Quantidade:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Requisitar pagamento</translation>
     </message>
     <message>
@@ -2557,7 +2557,7 @@ https://www.transifex.com/stipend-project/stipend-project-translations</translat
         <translation>&amp;Salvar imagem...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Requisitar pagamento a %1</translation>
     </message>
     <message>

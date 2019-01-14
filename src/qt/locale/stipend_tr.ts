@@ -645,7 +645,7 @@
         <translation>Koinleri Stipend adresine gönder</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Ödeme talep etme (QR kodları ve stipend üretir: URI'ler)</translation>
     </message>
     <message>
@@ -3223,7 +3223,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>miktar:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>Ödeme talep et</translation>
     </message>
     <message>
@@ -3286,7 +3286,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>&amp;Görüntüyü kaydet...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Ödeme talep et %1</translation>
     </message>
     <message>

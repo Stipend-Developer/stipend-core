@@ -653,7 +653,7 @@
         <translation>Envoyer des pièces à une adresse Stipend</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Requêtes de paiements (Génère des QR codes et des URIs Stipend)</translation>
     </message>
     <message>
@@ -3467,7 +3467,7 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Montant :</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>Demande le paiement</translation>
     </message>
     <message>
@@ -3530,7 +3530,7 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>&amp;Enregistrer l'image...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Demander un paiement à %1</translation>
     </message>
     <message>

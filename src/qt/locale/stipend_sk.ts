@@ -577,7 +577,7 @@
         <translation>Odoslať mince na adresu Stipend</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Vyžiadať platby (generuje QR kódy a stipend: identifikátory URI)</translation>
     </message>
     <message>

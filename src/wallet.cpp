@@ -3712,7 +3712,7 @@ bool CReserveKey::GetReservedKey(CPubKey& pubkey)
     }
     assert(vchPubKey.IsValid());
     pubkey = vchPubKey;
-    LogPrintf("Return GetReservedKey \n")
+    LogPrintf("Return GetReservedKey \n");
     return true;
 }
 

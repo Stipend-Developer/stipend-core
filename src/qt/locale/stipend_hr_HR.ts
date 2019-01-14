@@ -653,7 +653,7 @@
         <translation>Pošaljite kovanice na Stipend adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Zahtjev za plaćanje (generira QR kodove i stipend: URI)</translation>
     </message>
     <message>
@@ -3537,7 +3537,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Iznos:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>Zatraži plaćanje</translation>
     </message>
     <message>
@@ -3600,7 +3600,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Spremi sliku...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Zatražite uplatu na %1</translation>
     </message>
     <message>

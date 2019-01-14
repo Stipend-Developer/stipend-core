@@ -226,28 +226,11 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelWatchLocked->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nWatchOnlyLockedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelWatchTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nTotalWatchBalance, false, BitcoinUnits::separatorAlways));
 
-    // zSPD labels
-    ui->labelzBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, zerocoinBalance, false, BitcoinUnits::separatorAlways));
-    ui->labelzBalanceUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedZerocoinBalance, false, BitcoinUnits::separatorAlways));
-    ui->labelzBalanceMature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, matureZerocoinBalance, false, BitcoinUnits::separatorAlways));
-    ui->labelzBalanceImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureZerocoinBalance, false, BitcoinUnits::separatorAlways));
-
-    // Combined labels
-    ui->labelBalancez->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, availableTotalBalance, false, BitcoinUnits::separatorAlways));
-    ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sumTotalBalance, false, BitcoinUnits::separatorAlways));
-
-    // Percentage labels
-    ui->labelSPDPercent->setText(sPercentage);
-    ui->labelzSPDPercent->setText(szPercentage);
-
     // Only show most balances if they are non-zero for the sake of simplicity
     QSettings settings;
     bool settingShowAllBalances = !settings.value("fHideZeroBalances").toBool();
 
     bool showSumAvailable = settingShowAllBalances || sumTotalBalance != availableTotalBalance;
-    ui->labelBalanceTextz->setVisible(showSumAvailable);
-    ui->labelBalancez->setVisible(showSumAvailable);
-
     bool showWatchOnly = nTotalWatchBalance != 0;
 
     // SPD Available
@@ -282,17 +265,9 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     bool showzSPDAvailable = settingShowAllBalances || zerocoinBalance != matureZerocoinBalance;
     bool showzSPDUnconfirmed = settingShowAllBalances || unconfirmedZerocoinBalance != 0;
     bool showzSPDImmature = settingShowAllBalances || immatureZerocoinBalance != 0;
-    ui->labelzBalanceMature->setVisible(showzSPDAvailable);
-    ui->labelzBalanceMatureText->setVisible(showzSPDAvailable);
-    ui->labelzBalanceUnconfirmed->setVisible(showzSPDUnconfirmed);
-    ui->labelzBalanceUnconfirmedText->setVisible(showzSPDUnconfirmed);
-    ui->labelzBalanceImmature->setVisible(showzSPDImmature);
-    ui->labelzBalanceImmatureText->setVisible(showzSPDImmature);
 
     // Percent split
     bool showPercentages = ! (zerocoinBalance == 0 && nTotalBalance == 0);
-    ui->labelSPDPercent->setVisible(showPercentages);
-    ui->labelzSPDPercent->setVisible(showPercentages);
 
     static int cachedTxLocks = 0;
 

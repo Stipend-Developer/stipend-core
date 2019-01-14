@@ -653,7 +653,7 @@
         <translation>An eine Stipend-Adresse überweisen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Zahlung anfordern (QR-Code Generierung und stipend: URIs)</translation>
     </message>
     <message>
@@ -3531,7 +3531,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>&amp;Betrag:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>Zahlung anfo&amp;rdern</translation>
     </message>
     <message>
@@ -3594,7 +3594,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Grafik &amp;speichern...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Zahlung an %1 anfordern </translation>
     </message>
     <message>

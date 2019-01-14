@@ -610,8 +610,8 @@
         <translation>Send coins to a Stipend address</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
-        <translation>Request payments (generates QR codes and stipend: URIs)</translation>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
+        <translation>Request Payments (generates QR codes and stipend: URIs)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -2579,8 +2579,8 @@ https://www.transifex.com/stipend-project/stipend-project-translations</translat
         <translation>&amp;Amount:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Request payment</translation>
+        <source>&amp;Request Payment</source>
+        <translation>&amp;Request Payment</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2642,8 +2642,8 @@ https://www.transifex.com/stipend-project/stipend-project-translations</translat
         <translation>&amp;Save Image...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
-        <translation>Request payment to %1</translation>
+        <source>Request Payment to %1</source>
+        <translation>Request Payment to %1</translation>
     </message>
     <message>
         <source>Payment information</source>

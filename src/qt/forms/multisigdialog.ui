@@ -26,7 +26,7 @@
       <string notr="true">QScrollArea{border: 1px solid #5b4c7c;}</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="addMultisigTab">
       <property name="sizePolicy">
@@ -150,7 +150,7 @@
             <x>0</x>
             <y>0</y>
             <width>759</width>
-            <height>166</height>
+            <height>194</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -398,7 +398,7 @@ Please be patient after clicking import.</string>
                 <x>0</x>
                 <y>0</y>
                 <width>747</width>
-                <height>131</height>
+                <height>142</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -483,7 +483,7 @@ Please be patient after clicking import.</string>
                 <x>0</x>
                 <y>0</y>
                 <width>747</width>
-                <height>130</height>
+                <height>141</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -780,7 +780,7 @@ txScrollArea:{
                 <x>0</x>
                 <y>0</y>
                 <width>755</width>
-                <height>168</height>
+                <height>181</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_9">

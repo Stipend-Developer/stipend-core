@@ -653,7 +653,7 @@
         <translation>Sendu mono al Stipend addreso</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Peto pagojn (generas QR kodojn kaj stipend: URIs)</translation>
     </message>
     <message>
@@ -2148,7 +2148,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>&amp;Etikedo:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Pago peto</translation>
     </message>
     <message>

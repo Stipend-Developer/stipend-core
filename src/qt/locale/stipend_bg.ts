@@ -653,7 +653,7 @@
         <translation>Изпратете монети до Stipend адрес</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Поискай плащане (генерира QR кодове и  Stipend:URI)</translation>
     </message>
     <message>
@@ -3528,7 +3528,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>&amp;Сума:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Поискай плащане</translation>
     </message>
     <message>
@@ -3591,7 +3591,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>&amp;Запази Картинката...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Поискай плащане към %1</translation>
     </message>
     <message>

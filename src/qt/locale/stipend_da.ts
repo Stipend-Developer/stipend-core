@@ -653,7 +653,7 @@
         <translation>Send mønter til en Stipend adresse</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Anmod om betaling (genrerer QR kode og Stipend URL)</translation>
     </message>
     <message>
@@ -3539,7 +3539,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>&amp;Beløb</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Anmod om betaling</translation>
     </message>
     <message>
@@ -3602,7 +3602,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>&amp;Gem billede</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Anmod om betaling til %1</translation>
     </message>
     <message>

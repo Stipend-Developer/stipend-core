@@ -653,7 +653,7 @@
         <translation>Skicka mynt till en Stipend adress</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Begär betalning (genererar QR kod och stipend: URls)</translation>
     </message>
     <message>
@@ -3531,7 +3531,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>&amp;Spara Bild...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Fråga om betalning till %1</translation>
     </message>
     <message>

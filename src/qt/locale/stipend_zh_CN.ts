@@ -577,7 +577,7 @@
         <translation>发送数字货币到Stipend地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>请求支付（生成二维码和stipend：URIs）</translation>
     </message>
     <message>
@@ -1188,7 +1188,7 @@ Address: %4
         <translation>&amp;总计</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;请求支付</translation>
     </message>
     <message>

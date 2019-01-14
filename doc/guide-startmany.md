@@ -49,7 +49,7 @@ The wallet will re-scan and you will see your available balance increase by the 
 3. Fill in the form to request a payment.
     * Label: mn01
     * Amount: 1000 (optional)
-    * Click *Request payment*
+    * Click *Request Payment*
 5. Click the *Copy Address* button
 
 Create a new wallet address for each MasterNode.

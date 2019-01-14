@@ -653,7 +653,7 @@
         <translation>Invia valuta all'indirizzo Stipend</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Richiedi pagamenti (genera codici QR e stipend: URIs)</translation>
     </message>
     <message>

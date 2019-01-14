@@ -565,7 +565,7 @@
         <translation>送出錢幣到 Stipend 地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>請求付款 (會產生 QR Code跟 stipend 位址)</translation>
     </message>
     <message>

@@ -609,7 +609,7 @@
         <translation>Odeslat platbuna Stipend adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Vyžádat platbu (generování QK kódu a stipend: URIs)</translation>
     </message>
     <message>
@@ -1954,7 +1954,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>&amp;Hodnota</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Vyžádat platbu</translation>
     </message>
     <message>

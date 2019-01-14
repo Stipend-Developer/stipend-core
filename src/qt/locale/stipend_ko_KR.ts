@@ -653,7 +653,7 @@
         <translation>Stipend 주소로 입금하기</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>결제 요청 (QR 코드 및 stipend: URI 생성)</translation>
     </message>
     <message>
@@ -3540,7 +3540,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>&amp;금액:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;결제 요청</translation>
     </message>
     <message>
@@ -3603,7 +3603,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>이미지 &amp;저장...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>%1 결제 요청</translation>
     </message>
     <message>

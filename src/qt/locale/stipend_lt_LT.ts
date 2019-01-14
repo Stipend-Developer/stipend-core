@@ -653,7 +653,7 @@
         <translation>Siųsti monetas į Stipend adresą</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir stipend URI)</translation>
     </message>
     <message>
@@ -2848,7 +2848,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>&amp;Suma:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Prašyti mokėjimo</translation>
     </message>
     <message>

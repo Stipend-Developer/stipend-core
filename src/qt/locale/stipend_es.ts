@@ -653,7 +653,7 @@
         <translation>Enviar monedas a una dirección Stipend</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Solicitud de pago (genera un código QR y URIs)</translation>
     </message>
     <message>
@@ -3540,7 +3540,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>&amp;Cantidad:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
+        <source>&amp;Request Payment</source>
         <translation>&amp;Solicitud de pago</translation>
     </message>
     <message>
@@ -3603,7 +3603,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>&amp;Guardar Imagen...</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
+        <source>Request Payment to %1</source>
         <translation>Solicitar pago a %1</translation>
     </message>
     <message>

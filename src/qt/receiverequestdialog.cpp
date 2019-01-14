@@ -127,7 +127,7 @@ void ReceiveRequestDialog::update()
     QString target = info.label;
     if (target.isEmpty())
         target = info.address;
-    setWindowTitle(tr("Request payment to %1").arg(target));
+    setWindowTitle(tr("Request Payment to %1").arg(target));
 
     QString uri = GUIUtil::formatBitcoinURI(info);
     ui->btnSaveAs->setEnabled(false);

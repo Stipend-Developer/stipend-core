@@ -517,7 +517,7 @@
         <translation>Wyślij monety do adresu Stipend</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and stipend: URIs)</source>
+        <source>Request Payments (generates QR codes and stipend: URIs)</source>
         <translation>Zarządaj płatności (generuje kod QR i stipend:URI)</translation>
     </message>
     <message>
