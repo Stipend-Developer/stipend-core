@@ -122,7 +122,7 @@ public:
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetTimespan = 45 * 60; // Stipend: 1 day
-        nTargetSpacing = 1 * 90;  // Stipend: 1.5 minutes
+        nTargetSpacing = 1 * 60;  // Stipend: 1 minute
         nMaturity = 10;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
@@ -266,7 +266,7 @@ public:
         nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Stipend: 1 day
-        nTargetSpacing = 1 * 90;  // Stipend: 1.5 minutes
+        nTargetSpacing = 1 * 60;  // Stipend: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
