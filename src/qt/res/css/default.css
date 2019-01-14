@@ -1,14 +1,14 @@
 /****************************************************************************************/
 /* Global color codes:                                                                  */
 /* dark-purple:        #000000                                                          */
-/* transparent-purple: #e9e7ef (for inactive backgrounds)                               */
+/* transparent-purple: #000000 (for inactive backgrounds)                               */
 /*                                                                                      */
-/* light-purple1:      #b396f6 (main purple for white backgrounds)                      */
-/* light-purple2:      #9179c7 (sligtly darker for gradients)                           */
+/* light-purple1:      #000000 (main purple for white backgrounds)                      */
+/* light-purple2:      #000000 (sligtly darker for gradients)                           */
 /*                                                                                      */
 /* medium-purple1:     #000000 (on hover)                                               */
 /* medium-purple1:     #000000 (main purple for dark backgrounds)                       */
-/* medium-purple2:     #5b4c86 (sligtly darker for gradients)                           */
+/* medium-purple2:     #000000 (sligtly darker for gradients)                           */
 /*                                                                                      */
 /* fuchsia:            #df1cca                                                          */
 /* background:         #f8f6f6                                                          */
@@ -164,7 +164,7 @@ color:#333;
 }
 
 QToolTip {
-background-color:#000000fde;
+background-color:#ffffff;
 color:#333;
 }
 
@@ -493,7 +493,7 @@ min-height:10px;
 }
 
 QScrollBar::handle:vertical:pressed { /* Scroll Bar Slider - vertical */
-background:#9179c7;
+background:#000000;
 min-height:10px;
 }
 
@@ -503,7 +503,7 @@ min-width:10px;
 }
 
 QScrollBar::handle:horizontal:pressed { /* Scroll Bar Slider - horizontal */
-background:#9179c7;
+background:#000000;
 min-width:10px;
 }
 
@@ -571,15 +571,15 @@ border-radius: 4px;
 }
 
 QSlider::sub-page:horizontal {
-/* background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #5B4C86, stop: 1 #7b67a9); */
-background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #9179c7, stop: 1 #b396f6);
+/* background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #000000, stop: 1 #000000); */
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #000000, stop: 1 #000000);
 border: 1px solid #333;
 height: 10px;
 border-radius: 4px;
 }
 
 QSlider::add-page:horizontal {
-background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #000000, stop: 1 #9179c7);
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #000000, stop: 1 #000000);
 border: 1px solid #333;
 height: 10px;
 border-radius: 4px;
