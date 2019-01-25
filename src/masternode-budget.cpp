@@ -171,7 +171,7 @@ void CBudgetManager::SubmitFinalBudget()
     }
 
     int nFinalizationStart = nBlockStart - finalizationWindow;
- 
+
     int nOffsetToStart = nFinalizationStart - nCurrentHeight;
 
     if (nBlockStart - nCurrentHeight > finalizationWindow) {
@@ -654,7 +654,7 @@ bool CBudgetManager::IsBudgetPaymentBlock(int nBlockHeight)
         ++it;
     }
 
-    LogPrint("mnbudget","CBudgetManager::IsBudgetPaymentBlock() - nHighestCount: %lli, 5%% of Masternodes: %lli. Number of finalized budgets: %lli\n", 
+    LogPrint("mnbudget","CBudgetManager::IsBudgetPaymentBlock() - nHighestCount: %lli, 5%% of Masternodes: %lli. Number of finalized budgets: %lli\n",
               nHighestCount, nFivePercent, mapFinalizedBudgets.size());
 
     // If budget doesn't have 5% of the network votes, then we should pay a masternode instead
@@ -689,7 +689,7 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
         ++it;
     }
 
-    LogPrint("mnbudget","CBudgetManager::IsTransactionValid() - nHighestCount: %lli, 5%% of Masternodes: %lli mapFinalizedBudgets.size(): %ld\n", 
+    LogPrint("mnbudget","CBudgetManager::IsTransactionValid() - nHighestCount: %lli, 5%% of Masternodes: %lli mapFinalizedBudgets.size(): %ld\n",
               nHighestCount, nFivePercent, mapFinalizedBudgets.size());
     /*
         If budget doesn't have 5% of the network votes, then we should pay a masternode instead
@@ -707,7 +707,7 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
         strProposals = pfinalizedBudget->GetProposals();
 
         LogPrint("mnbudget","CBudgetManager::IsTransactionValid - checking budget (%s) with blockstart %lli, blockend %lli, nBlockHeight %lli, votes %lli, nCountThreshold %lli\n",
-                 strProposals.c_str(), pfinalizedBudget->GetBlockStart(), pfinalizedBudget->GetBlockEnd(), 
+                 strProposals.c_str(), pfinalizedBudget->GetBlockStart(), pfinalizedBudget->GetBlockEnd(),
                  nBlockHeight, pfinalizedBudget->GetVoteCount(), nCountThreshold);
 
         if (pfinalizedBudget->GetVoteCount() > nCountThreshold) {
@@ -727,7 +727,7 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
             else {
                 LogPrint("mnbudget","CBudgetManager::IsTransactionValid - GetBlockStart() failed, budget is outside current payment cycle and will be ignored.\n");
             }
-               
+
         }
 
         ++it;
@@ -737,7 +737,7 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
     if(!fThreshold) {
         transactionStatus = TrxValidationStatus::VoteThreshold;
     }
-    
+
     // We looked through all of the known budgets
     return transactionStatus;
 }
@@ -911,47 +911,30 @@ std::string CBudgetManager::GetRequiredPaymentsString(int nBlockHeight)
 
 CAmount CBudgetManager::GetTotalBudget(int nHeight)
 {
-    if (chainActive.Tip() == NULL) return 0;
 
+    if (chainActive.Tip() == NULL) return 0;
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         CAmount nSubsidy = 500 * COIN;
         return ((nSubsidy / 100) * 10) * 146;
     }
 
-    //get block value and calculate from that
     CAmount nSubsidy = 0;
-    if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
-        nSubsidy = 50 * COIN;
-    } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 50 * COIN;
-    } else if (nHeight <= 345599 && nHeight >= 302400) {
-        nSubsidy = 45 * COIN;
-    } else if (nHeight <= 388799 && nHeight >= 345600) {
-        nSubsidy = 40 * COIN;
-    } else if (nHeight <= 431999 && nHeight >= 388800) {
-        nSubsidy = 35 * COIN;
-    } else if (nHeight <= 475199 && nHeight >= 432000) {
-        nSubsidy = 30 * COIN;
-    } else if (nHeight <= 518399 && nHeight >= 475200) {
-        nSubsidy = 25 * COIN;
-    } else if (nHeight <= 561599 && nHeight >= 518400) {
-        nSubsidy = 20 * COIN;
-    } else if (nHeight <= 604799 && nHeight >= 561600) {
-        nSubsidy = 15 * COIN;
-    } else if (nHeight <= 647999 && nHeight >= 604800) {
-        nSubsidy = 10 * COIN;
-    } else if (nHeight >= Params().Zerocoin_Block_V2_Start()) {
-        nSubsidy = 10 * COIN;
-    } else {
-        nSubsidy = 5 * COIN;
-    }
 
-    // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-    if (nHeight <= 172800) {
-        return 648000 * COIN;
-    } else {
-        return ((nSubsidy / 100) * 10) * 1440 * 30;
+    if (nHeight < 2102400 && nHeight > 1) {
+      nSubsidy = 1.4 * COIN;
+    } else if (nHeight < 4204800 && nHeight >= 2102400) {
+      nSubsidy = 1.25 * COIN;
+    } else if (nHeight < 6307200 && nHeight >= 4204800) {
+      nSubsidy = 0.7 * COIN;
+    } else if (nHeight < 8409600 && nHeight >= 6307200) {
+      nSubsidy = 0.35 * COIN;
+    } else if (nHeight < 10512000 && nHeight >= 8409600) {
+      nSubsidy = 0.15 * COIN;
+    } else if (nHeight >= 10512000) {
+      nSubsidy = 0.15 * COIN;
+      nSubsidy >>= (nHeight - 10512000) / 2102400;
     }
+    return ((nSubsidy / 100) * 10) * 1440 * 30;
 }
 
 void CBudgetManager::NewBlock()
@@ -2049,7 +2032,7 @@ bool CFinalizedBudget::IsValid(std::string& strError, bool fCheckCollateral)
 {
     // All(!) finalized budgets have the name "main", so get some additional information about them
     std::string strProposals = GetProposals();
-    
+
     // Must be the correct block for payment to happen (once a month)
     if (nBlockStart % GetBudgetPaymentCycleBlocks() != 0) {
         strError = "Invalid BlockStart";
@@ -2106,7 +2089,7 @@ bool CFinalizedBudget::IsValid(std::string& strError, bool fCheckCollateral)
 
     // Remove budgets where the last payment (from max. 100) ends before 2 budget-cycles before the current one
     int nMaxAge = nBlockStart - (2 * GetBudgetPaymentCycleBlocks());
-    
+
     if (GetBlockEnd() < nMaxAge) {
         strError = strprintf("Budget " + strBudgetName + " (" + strProposals + ") (ends at block %ld) too old and obsolete", GetBlockEnd());
         return false;
@@ -2126,7 +2109,7 @@ bool CFinalizedBudget::IsPaidAlready(uint256 nProposalHash, int nBlockHeight)
         nPaidBlockHeight = (*it).second;
         if((nPaidBlockHeight < GetBlockStart()) || (nPaidBlockHeight > GetBlockEnd())) {
             nOldProposalHash = (*it).first;
-            LogPrint("mnbudget", "CFinalizedBudget::IsPaidAlready - Budget Proposal %s, Block %d from old cycle deleted\n", 
+            LogPrint("mnbudget", "CFinalizedBudget::IsPaidAlready - Budget Proposal %s, Block %d from old cycle deleted\n",
                       nOldProposalHash.ToString().c_str(), nPaidBlockHeight);
             mapPayment_History.erase(it++);
         }
@@ -2139,7 +2122,7 @@ bool CFinalizedBudget::IsPaidAlready(uint256 nProposalHash, int nBlockHeight)
     if(mapPayment_History.count(nProposalHash) == 0) {
         // New proposal payment, insert into map for checks with later blocks from this cycle
         mapPayment_History.insert(std::pair<uint256, int>(nProposalHash, nBlockHeight));
-        LogPrint("mnbudget", "CFinalizedBudget::IsPaidAlready - Budget Proposal %s, Block %d added to payment history\n", 
+        LogPrint("mnbudget", "CFinalizedBudget::IsPaidAlready - Budget Proposal %s, Block %d added to payment history\n",
                   nProposalHash.ToString().c_str(), nBlockHeight);
         return false;
     }
@@ -2164,7 +2147,7 @@ TrxValidationStatus CFinalizedBudget::IsTransactionValid(const CTransaction& txN
     bool paid = false;
 
     BOOST_FOREACH (CTxOut out, txNew.vout) {
-        LogPrint("mnbudget","CFinalizedBudget::IsTransactionValid - nCurrentBudgetPayment=%d, payee=%s == out.scriptPubKey=%s, amount=%ld == out.nValue=%ld\n", 
+        LogPrint("mnbudget","CFinalizedBudget::IsTransactionValid - nCurrentBudgetPayment=%d, payee=%s == out.scriptPubKey=%s, amount=%ld == out.nValue=%ld\n",
                  nCurrentBudgetPayment, vecBudgetPayments[nCurrentBudgetPayment].payee.ToString().c_str(), out.scriptPubKey.ToString().c_str(),
                  vecBudgetPayments[nCurrentBudgetPayment].nAmount, out.nValue);
 
