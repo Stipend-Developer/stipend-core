@@ -407,6 +407,7 @@ SOURCES += src/activemasternode.cpp \
            src/rpcblockchain.cpp \
            src/rpcclient.cpp \
            src/rpcdump.cpp \
+           src/rpcmasternode-budget.cpp \
            src/rpcmasternode.cpp \
            src/rpcmining.cpp \
            src/rpcmisc.cpp \
