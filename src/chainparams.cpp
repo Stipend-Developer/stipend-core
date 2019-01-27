@@ -147,7 +147,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "Stipend Codebase Upgrade - 1/12/19";
+        const char* pszTimestamp = "Stipend Codebase Upgrade - 1/27/19";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -158,9 +158,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1547320083;
+        genesis.nTime = 1547320085;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 5399308;
+        genesis.nNonce = 586980;
 
         hashGenesisBlock = genesis.GetHash();
 
@@ -191,8 +191,8 @@ public:
         }
         */
 
-        assert(hashGenesisBlock == uint256("0x0000035246f679f3b9d0885d69cf94cdc8fa55208988b732587d26da783bbabf"));
-        assert(genesis.hashMerkleRoot == uint256("0x98afb6de81316e7bf36b9fba62ec25812e40522517735a42aa2125dd2d7f3ab7"));
+        assert(hashGenesisBlock == uint256("0x00000b3583cf76b4559c85ba47f2d1b4991faaebd19b80abaf05d19a68488624"));
+        assert(genesis.hashMerkleRoot == uint256("0x40f7a50f2cd27ad616981a183e2a395a4fdfc221e132a62fac686aa0c1b48c68"));
 
         vSeeds.push_back(CDNSSeedData("0", "45.76.7.158"));
 
@@ -280,8 +280,8 @@ public:
         nBlockZerocoinV2 = 444020; //!> The block that zerocoin v2 becomes active
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1454124731;
-        genesis.nNonce = 1853135;
+        genesis.nTime = 1454124732;
+        genesis.nNonce = 1726002;
 
         hashGenesisBlock = genesis.GetHash();
 
@@ -296,7 +296,7 @@ public:
                   ++genesis.nNonce;
                   if (genesis.nNonce == 0)
                   {
-                      printf("Mainnet NONCE WRAPPED, incrementing time");
+                      printf("Testnet NONCE WRAPPED, incrementing time");
                       std::cout << std::string("Mainnet NONCE WRAPPED, incrementing time:\n");
                       ++genesis.nTime;
                   }
@@ -312,7 +312,7 @@ public:
         }
         */
 
-        assert(hashGenesisBlock == uint256("0x00000b0a648c9f25512125f9747660e4143ff276ef42c2b8716d06a8069631cb"));
+        assert(hashGenesisBlock == uint256("0x00000539c9368a2e925af390565d7c9333e65b925269aead2c839952248ee816"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -377,9 +377,9 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Stipend: 1 day
         nTargetSpacing = 1 * 60;        // Stipend: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1454124731;
+        genesis.nTime = 1454124732;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 2;
+        genesis.nNonce = 0;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 51476;
@@ -395,7 +395,7 @@ public:
                   ++genesis.nNonce;
                   if (genesis.nNonce == 0)
                   {
-                      printf("Mainnet NONCE WRAPPED, incrementing time");
+                      printf("Regtest NONCE WRAPPED, incrementing time");
                       std::cout << std::string("Mainnet NONCE WRAPPED, incrementing time:\n");
                       ++genesis.nTime;
                   }
@@ -411,7 +411,7 @@ public:
         }
         */
 
-        assert(hashGenesisBlock == uint256("0x2d51f81e9b189dae3130c785ba38fd60ae83229a57a710746475836f275da44a"));
+        assert(hashGenesisBlock == uint256("0x30cbc594942f095b1d2603904acb79d4eb84ad8952dd0a853ec6d1b76b3cb799"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
