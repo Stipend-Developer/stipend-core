@@ -158,9 +158,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1547320087;
+        genesis.nTime = 1547320090;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 717958;
+        genesis.nNonce = 411832;
 
         hashGenesisBlock = genesis.GetHash();
 
@@ -191,7 +191,7 @@ public:
         }
         */
 
-        assert(hashGenesisBlock == uint256("0x00000efce09a08014046e9b27f066d01d6b46c93a3c087030c342649efff7ed1"));
+        assert(hashGenesisBlock == uint256("0x000007929d05212de4e111923059bd919be7939194b5ede235d03911a1f61b46"));
         assert(genesis.hashMerkleRoot == uint256("0x6d07032c7d4a599d0fb17dcedfbe99158a616b2b3b51108bee32d754f4becf1b"));
 
         vSeeds.push_back(CDNSSeedData("0", "45.76.7.158"));
@@ -282,8 +282,8 @@ public:
         nBlockZerocoinV2 = 444020; //!> The block that zerocoin v2 becomes active
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1454124734;
-        genesis.nNonce = 286145;
+        genesis.nTime = 1454124740;
+        genesis.nNonce = 1276799;
 
         hashGenesisBlock = genesis.GetHash();
 
@@ -314,7 +314,7 @@ public:
         }
         */
 
-        assert(hashGenesisBlock == uint256("0x000007b52746653c292f34172b237d318a17c85afe780d25a111705a0ad0bb96"));
+        assert(hashGenesisBlock == uint256("0x00000987b59ea65d63005cba668da90b48289a03ee88f51704b2d251b5579b39"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -412,7 +412,7 @@ public:
               printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
         }
         */
-        
+
         assert(hashGenesisBlock == uint256("0x1277eec01defb6ebaad8bf4d4bc4489613aaddb1b95a0df345731a76b87104de"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
