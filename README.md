@@ -12,8 +12,8 @@ Stipend Core integration/staging repository
 ### PoW Rewards Breakdown
 
 <table>
-<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Budget</th>
-<tr><td>0-200</td><td>100% (1,4 SPD)</td><td>N/A</td></tr>
+<th>Block Height</th><th>Miners</th>
+<tr><td>0-200</td><td>100% (1,4 SPD)</td>
 
 
 ### PoS Rewards Breakdown
