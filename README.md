@@ -26,5 +26,4 @@ Stipend Core integration/staging repository
 <tr><td>Phase 3</td><td>6,307,200-8,409,599</td><td>0,28 SPD</td><td>0,07 SPD</td>
 <tr><td>Phase 4</td><td>8,409,600-10,511,999</td><td>0,12 SPD</td><td>0,03 SPD</td>
 <tr><td>Phase 5</td><td>each 2,102,400</td><td>Half</td><td>Half</td><
-  
-</table>
+
