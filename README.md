@@ -20,7 +20,7 @@ Stipend Core integration/staging repository
 
 <table>
 <th>Phase</th><th>Block Height</th><th>Masternodes</th><th>Staking</th>
-<tr><td>Phase 0</td><td>0-2,102,399</td><td>1,15 SPD</td><td>0,25 SPD</td>
+<tr><td>Phase 0</td><td>201-2,102,399</td><td>1,15 SPD</td><td>0,25 SPD</td>
 <tr><td>Phase 1</td><td>2,102,400-4,204,799</td><td>1,05 SPD</td><td>0,2 SPD</td>
 <tr><td>Phase 2</td><td>4,204,800-6,307,199</td><td>0,55 SPD</td><td>0,15 SPD</td>
 <tr><td>Phase 3</td><td>6,307,200-8,409,599</td><td>0,28 SPD</td><td>0,07 SPD</td>
