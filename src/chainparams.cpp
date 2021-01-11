@@ -222,6 +222,10 @@ public:
         assert(hashGenesisBlock == uint256("0x000007929d05212de4e111923059bd919be7939194b5ede235d03911a1f61b46"));
         assert(genesis.hashMerkleRoot == uint256("0x6d07032c7d4a599d0fb17dcedfbe99158a616b2b3b51108bee32d754f4becf1b"));
 
+        vSeeds.push_back(CDNSSeedData("0", "45.76.7.158"));
+        vSeeds.push_back(CDNSSeedData("1", "45.77.222.219"));
+        vSeeds.push_back(CDNSSeedData("2", "45.77.99.125"));
+
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 125);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 21);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 23);
@@ -361,6 +365,11 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
+
+        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "stipend-testnet.seed.fuzzbawls.pw"));
+        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "stipend-testnet.seed2.fuzzbawls.pw"));
+        vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
+        vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet pivx addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet pivx script addresses start with '8' or '9'
