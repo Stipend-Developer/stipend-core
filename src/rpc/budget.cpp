@@ -83,7 +83,7 @@ void checkBudgetInputs(const UniValue& params, std::string &strProposalName, std
     if (!address.IsValid())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PIVX address");
 
-    nAmount = AmountFromValue(params[5]);
+    nAmount = AmountFromValueJustForBudget(params[5]);
 }
 
 UniValue preparebudget(const UniValue& params, bool fHelp)

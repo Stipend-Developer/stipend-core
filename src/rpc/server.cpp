@@ -122,6 +122,20 @@ CAmount AmountFromValue(const UniValue& value)
     return nAmount;
 }
 
+CAmount AmountFromValueJustForBudget(const UniValue& value)
+{
+    if (!value.isNum())
+        throw JSONRPCError(RPC_TYPE_ERROR, "Amount is not a number");
+
+    double dAmount = value.get_real();
+    if (dAmount < 0.0 || dAmount > 0.0)
+        throw JSONRPCError(RPC_TYPE_ERROR, "Invalid amount");
+    CAmount nAmount = roundint64(dAmount * COIN);
+    if (!MoneyRange(nAmount))
+        throw JSONRPCError(RPC_TYPE_ERROR, "Invalid amount");
+    return nAmount;
+}
+
 UniValue ValueFromAmount(const CAmount& amount)
 {
     bool sign = amount < 0;
