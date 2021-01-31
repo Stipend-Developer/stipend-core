@@ -86,28 +86,18 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
         // Last 2 columns are set by the columnResizingFixer, when the table geometry is ready.
         columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(tableView, AMOUNT_MINIMUM_COLUMN_WIDTH, DATE_COLUMN_WIDTH);
 
-        // Init address field
-        QSettings settings;
-        address = settings.value("current_receive_address").toString();
-        if (address.isEmpty())
-            address = getAddress();
-        ui->reqAddress->setText(address);
-
         connect(model, SIGNAL(notifyReceiveAddressChanged()), this, SLOT(receiveAddressUsed()));
     }
 }
 
 ReceiveCoinsDialog::~ReceiveCoinsDialog()
 {
-    QSettings settings;
-    settings.setValue("current_receive_address", address);
     delete ui;
 }
 
 void ReceiveCoinsDialog::clear()
 {
     ui->reqAmount->clear();
-    ui->reqAddress->setText(address);
     ui->reqLabel->setText("");
     ui->reqMessage->setText("");
     ui->reuseAddress->setChecked(false);
