@@ -500,7 +500,7 @@ int main(int argc, char* argv[])
 
 /// 2. Basic Qt initialization (not dependent on parameters or configuration)
     Q_INIT_RESOURCE(pivx_locale);
-    Q_INIT_RESOURCE(pivx);
+    Q_INIT_RESOURCE(stipend);
 
     BitcoinApplication app(argc, argv);
 #if QT_VERSION > 0x050100

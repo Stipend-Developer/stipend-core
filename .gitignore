@@ -8,9 +8,9 @@ reset-files.bash
 
 *.exe
 src/pivx
-src/pivxd
-src/pivx-cli
-src/pivx-tx
+src/stipendd
+src/stipend-cli
+src/stipend-tx
 src/test/test_pivx
 src/qt/test/test_pivx-qt
 
@@ -84,7 +84,7 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-pivx-qt
+stipend-qt
 PIVX-Qt.app
 background.tiff*
 
