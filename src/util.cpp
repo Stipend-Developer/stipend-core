@@ -220,7 +220,7 @@ bool LogAcceptCategory(const char* category)
             ptrCategory.reset(new std::set<std::string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
             // "pivx" is a composite category enabling all PIVX-related debug output
-            if (ptrCategory->count(std::string("pivx"))) {
+            if (ptrCategory->count(std::string("stipend"))) {
                 ptrCategory->insert(std::string("obfuscation"));
                 ptrCategory->insert(std::string("swiftx"));
                 ptrCategory->insert(std::string("masternode"));
@@ -387,7 +387,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "pivx";
+    const char* pszModule = "stipend";
 #endif
     if (pex)
         return strprintf(
