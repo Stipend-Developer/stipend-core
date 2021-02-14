@@ -103,7 +103,7 @@ background-color: #000000; /* Do not highlight placeholder on hover */
 }
 
 QToolBar > QToolButton:pressed {
-background-color: qlineargradient(x1:0, x2: 1, stop: 0 #00a300, stop: 0.07 #00a300, stop: 0.0701 #000000, stop: 1 #000000);
+background-color: qlineargradient(x1:0, x2: 1, stop: 0 #ff0000, stop: 0.07 #ff0000, stop: 0.0701 #000000, stop: 1 #000000);
 color:#fff;
 }
 
@@ -249,9 +249,9 @@ QPushButton:focus {
 }
 
 QPushButton:pressed {
-background-color: #5c4c7c;
+background-color: #000000;
 border:1px solid #000000;
-background-color: qlineargradient(y1:0, y2: 1, stop: 0 #00ff00, stop: 0.1 #00ff00, stop: 0.101 #000000, stop: 0.9 #000000, stop: 0.901 #00ff00, stop: 1 #00ff00);
+background-color: qlineargradient(y1:0, y2: 1, stop: 0 #ff0000, stop: 0.1 #ff0000, stop: 0.101 #000000, stop: 0.9 #000000, stop: 0.901 #ff0000, stop: 1 #ff0000);
 }
 
 /* Special handling for statusbar-icons (which are partly QPushButtons) */
@@ -1079,7 +1079,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelTotal { /* Total Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#5c4c7c;
+color:#000000;
 margin-left:0px;
 }
 
@@ -1223,7 +1223,7 @@ QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalancez { /* Available PIV 
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:26px;
 font-weight:normal;
-color:#372f44;
+color:#000000;
 }
 
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelzBalanceTextz { /* Available zPIV Label */
