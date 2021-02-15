@@ -25,8 +25,10 @@
 SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) : QWidget(0, f), curAlignment(0)
 {
     // set reference point, paddings
-    int paddingLeft = 14;
-    int paddingTop = 325;
+    int paddingCol1Left = 14;
+    int paddingCol2Left = 525;
+    int paddingCol1Top = 382;
+    int paddingCol2Top = 331;
     int titleVersionVSpace = 17;
     int titleCopyrightVSpace = 32;
 
@@ -61,17 +63,17 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.setFont(QFont(font, 28 * fontFactor));
     fm = pixPaint.fontMetrics();
     //titleTextWidth = fm.width(titleText);
-    pixPaint.drawText(paddingLeft, paddingTop, titleText);
+    pixPaint.drawText(paddingCol1Left, paddingCol1Top, titleText);
 
     pixPaint.setFont(QFont(font, 15 * fontFactor));
-    pixPaint.drawText(paddingLeft, paddingTop + titleVersionVSpace, versionText);
+    pixPaint.drawText(paddingCol1Left, paddingCol1Top + titleVersionVSpace, versionText);
 
     // draw copyright stuff
     pixPaint.setFont(QFont(font, 10 * fontFactor));
-    pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace, copyrightTextBtc);
-    pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 12, copyrightTextDash);
-    pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 24, copyrightTextPIVX);
-    pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 36, copyrightTextStipend);
+    pixPaint.drawText(paddingCol2Left, paddingCol2Top + titleCopyrightVSpace, copyrightTextBtc);
+    pixPaint.drawText(paddingCol2Left, paddingCol2Top + titleCopyrightVSpace + 12, copyrightTextDash);
+    pixPaint.drawText(paddingCol2Left, paddingCol2Top + titleCopyrightVSpace + 24, copyrightTextPIVX);
+    pixPaint.drawText(paddingCol2Left, paddingCol2Top + titleCopyrightVSpace + 36, copyrightTextStipend);
 
     // draw additional text if special network
     if (!titleAddText.isEmpty()) {
