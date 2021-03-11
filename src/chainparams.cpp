@@ -52,7 +52,16 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000007929d05212de4e111923059bd919be7939194b5ede235d03911a1f61b46"));
+    (0, uint256("0x000007929d05212de4e111923059bd919be7939194b5ede235d03911a1f61b46"))
+    (250000, uint256("0x09f4d537a9cf42b82ea4a145ca7778ee1f300f6e56c00291da8dc2306b0f4ee2"))
+    (500000, uint256("0xc62e086c6b02f02e1040cf0b65d0dd277be37075408dc073c0fcd587f1abbbd2"))
+    (750000, uint256("0x77c236d2f87e062f8efd67d176f4b2c23ec1692e9f2161e15d99c74afb1d9389"))
+    (1000000, uint256("0xfebf3f5f1afc4e04ff7556586f85347619c6637b9b658c43e39e46c4744f8a3c"))
+    (1101499, uint256("0xcc5547bc87ea5ad239bcdcf94f676dcc40fa386be3f6fee9efff0684dcf25e1a"))
+    (1101600, uint256("0xce241d8704d888a68d8553ac823adcb917efa4a8d94eba633bd585b2dff78488"))
+    (1101620, uint256("0x39d325585204264c7e8fb8b95e59e76c0bc7205f1ff7718aa7a0a70299d5fd2b"))
+    (1102381, uint256("0x25c87c5f15384644cd95f6426cfc4023a1d60c34ee42e1c49d4ac25480b7f2b4"))
+    (1104480, uint256("0x09b1afd389c89e5d9021b72a4d79ecfdee2f5c6a4b61a9d10a539cf0175b32ec"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1525106065, // * UNIX timestamp of last checkpoint block
@@ -145,21 +154,21 @@ public:
         nPivxBadBlockTime = 1548671147; // Skip nBit validation of Block 259201 per PR #915
         nPivxBadBlocknBits = 0x1e031cf4; // Skip nBit validation of Block 259201 per PR #915
         nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 2147483647;
-        nZerocoinStartTime = 2147483647; // October 17, 2017 4:30:00 AM
+        nZerocoinStartHeight = 1101600;
+        nZerocoinStartTime = 1615168000; // October 17, 2017 4:30:00 AM
         nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 0; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 2147483647; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nBlockZerocoinV2 = 1101620; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nBlockDoubleAccumulated = 0;
-        nEnforceNewSporkKey = 1566860400; //!> Sporks signed after Monday, August 26, 2019 11:00:00 PM GMT must use the new spork key
-        nRejectOldSporkKey = 1569538800; //!> Fully reject old spork key after Thursday, September 26, 2019 11:00:00 PM GMT
-        nBlockStakeModifierlV2 = 2147483647;
+        nEnforceNewSporkKey = 1615167421; //!> Sporks signed after Monday, August 26, 2019 11:00:00 PM GMT must use the new spork key
+        nRejectOldSporkKey = 1615169565; //!> Fully reject old spork key after Thursday, September 26, 2019 11:00:00 PM GMT
+        nBlockStakeModifierlV2 = 1102381;
         // Public coin spend enforcement
-        nPublicZCSpends = 0;
+        nPublicZCSpends = 1101600;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = 0;
@@ -222,9 +231,7 @@ public:
         assert(hashGenesisBlock == uint256("0x000007929d05212de4e111923059bd919be7939194b5ede235d03911a1f61b46"));
         assert(genesis.hashMerkleRoot == uint256("0x6d07032c7d4a599d0fb17dcedfbe99158a616b2b3b51108bee32d754f4becf1b"));
 
-        vSeeds.push_back(CDNSSeedData("0", "45.76.7.158"));
-        vSeeds.push_back(CDNSSeedData("1", "45.77.222.219"));
-        vSeeds.push_back(CDNSSeedData("2", "45.77.99.125"));
+        vSeeds.push_back(CDNSSeedData("experiencepoints.io", "stipend-seeds.experiencepoints.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 125);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 21);
@@ -366,10 +373,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "stipend-testnet.seed.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "stipend-testnet.seed2.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
-        vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
+        vSeeds.push_back(CDNSSeedData("experiencepoints.io", "stipend-seeds.experiencepoints.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet pivx addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet pivx script addresses start with '8' or '9'
