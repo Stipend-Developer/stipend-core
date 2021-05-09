@@ -61,7 +61,8 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (1101600, uint256("0xce241d8704d888a68d8553ac823adcb917efa4a8d94eba633bd585b2dff78488"))
     (1101620, uint256("0x39d325585204264c7e8fb8b95e59e76c0bc7205f1ff7718aa7a0a70299d5fd2b"))
     (1102381, uint256("0x25c87c5f15384644cd95f6426cfc4023a1d60c34ee42e1c49d4ac25480b7f2b4"))
-    (1104480, uint256("0x09b1afd389c89e5d9021b72a4d79ecfdee2f5c6a4b61a9d10a539cf0175b32ec"));
+    (1104480, uint256("0x09b1afd389c89e5d9021b72a4d79ecfdee2f5c6a4b61a9d10a539cf0175b32ec"))
+    (1173411, uint256("0x75e2d713e1587a2578e105cb06cb268647d8949c27e011555a74b68137101735"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1525106065, // * UNIX timestamp of last checkpoint block
@@ -231,7 +232,7 @@ public:
         assert(hashGenesisBlock == uint256("0x000007929d05212de4e111923059bd919be7939194b5ede235d03911a1f61b46"));
         assert(genesis.hashMerkleRoot == uint256("0x6d07032c7d4a599d0fb17dcedfbe99158a616b2b3b51108bee32d754f4becf1b"));
 
-        vSeeds.push_back(CDNSSeedData("experiencepoints.io", "stipend-seeds.experiencepoints.io"));
+        vSeeds.push_back(CDNSSeedData("stipend.me", "mainnet-seeds.stipend.me"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 125);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 21);
@@ -373,7 +374,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        vSeeds.push_back(CDNSSeedData("experiencepoints.io", "stipend-seeds.experiencepoints.io"));
+        vSeeds.push_back(CDNSSeedData("stipend.me", "testnet-seeds.stipend.me"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet pivx addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet pivx script addresses start with '8' or '9'
